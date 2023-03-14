@@ -1,0 +1,36 @@
+body {
+  background-size: 100% auto;
+  background-image: url("background-image.jpg");
+  background-repeat: no-repeat;
+}
+
+.rectangle {
+	width: 250px;
+	height: 500px;
+    color: ghostwhite;
+	background: url("smartphone-image.jpg");
+    border-top:50px solid;
+    border-left: 10px solid;
+    border-right: 10px solid;
+    border-bottom: 60px solid;
+    border-radius: 20px; 
+    margin:auto}
+
+.roundButton {
+    text-align: center;
+    width: 2px;
+    height: 2px;
+    background: ghostwhite;
+    border-radius: 50%;
+    border: 1.8px solid;
+    border-color: #a2a7a2;
+    top: 104.7%;
+   
+}
+
+* {
+  position: relative;
+  padding: 25px 25px 20px;
+  margin: 0;
+  border-radius: 4px;
+}
