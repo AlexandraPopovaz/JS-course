@@ -10,7 +10,8 @@ body {
 	width: 280px;
 	height: 500px;
   color: ghostwhite;
-	background: url("smartphone-image.jpg");
+	background: url("newScreen.png") center;
+  background-size: 280px 500px;
   border-top:50px solid;
   border-left: 10px solid;
   border-right: 10px solid;
