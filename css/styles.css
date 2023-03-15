@@ -17,17 +17,18 @@ body {
   border-bottom: 60px solid;
   border-radius: 20px; 
   margin: auto;
+  box-shadow: -20px -20px 30px rgb(57, 54, 51);
 }
 
 .roundBottomButton {
-  text-align: center;
   width: 38px;
   height: 38px;
   background: ghostwhite;
   border-radius: 50%;
   border: 1.8px solid;
   border-color: #a2a7a2;
-  top: 101%;  
+  top: 101%;
+  box-shadow: none;  
 }
 
 .speaker{
@@ -38,6 +39,7 @@ border-radius: 25%;
 background: rgb(27, 27, 29);
 top: -28px;
 left: 3px;
+box-shadow: none; 
 }
 
 .topCircleBig{
@@ -49,6 +51,7 @@ border-radius: 50%;
 background: rgb(27, 27, 29);
 top: -30px;
 left: 99px;
+box-shadow: none; 
 }
 
 .topCircleSmall{
@@ -60,4 +63,53 @@ border-radius: 50%;
 background: rgb(27, 27, 29);
 top: -40px;
 left: 50%;
+box-shadow: none; 
+}
+
+.sideButtonLeftTop{
+position: absolute;
+width: 3px;
+height: 20px;
+border: 1px solid;
+border-radius: 25%;
+background: rgb(221, 221, 228);
+top: 10px;
+left: -12px;
+box-shadow: 0 0 5px rgb(27, 27, 29);
+}
+
+.sideButtonLeftMiddle{
+position: absolute;
+width: 3px;
+height: 40px;
+border: 1px solid;
+border-radius: 25%;
+background: rgb(221, 221, 228);
+top: 55px;
+left: -12px;
+box-shadow: 0 0 5px rgb(27, 27, 29);
+}
+
+.sideButtonLeftBottom{
+position: absolute;
+width: 3px;
+height: 40px;
+border: 1px solid;
+border-radius: 25%;
+background: rgb(221, 221, 228);
+top: 110px;
+left: -12px;
+box-shadow: 0 0 5px rgb(27, 27, 29);
+}
+
+.sideButtonRight{
+position: absolute;
+width: 3px;
+height: 40px;
+border: 1px solid;
+border-radius: 25%;
+background: rgb(193, 193, 199);
+top: 55px;
+left: 289px;
+box-shadow: none;
 }
