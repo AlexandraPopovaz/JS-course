@@ -5,30 +5,38 @@ body {
   background-repeat: no-repeat;
 }
 
-.rectangle {
+.phone {
   position: relative;
+  display: flex;
 	width: 280px;
 	height: 500px;
+  background-color: white;
   color: ghostwhite;
-	background: url("newScreen.png") center;
-  background-size: 280px 500px;
-  border-top:50px solid;
-  border-left: 10px solid;
-  border-right: 10px solid;
-  border-bottom: 60px solid;
+  padding: 20px 15px 20px;
   border-radius: 20px; 
   margin: auto;
   box-shadow: -20px -20px 30px rgb(57, 54, 51);
+  flex-direction: column;
 }
 
+.screen {
+  background: url("newScreen.png") center;
+  height: 100%;
+  width: 280px;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: column;
+}
 .roundBottomButton {
-  width: 38px;
-  height: 38px;
+  width: 45px;
+  height: 50px;
   background: ghostwhite;
   border-radius: 50%;
   border: 1.8px solid;
   border-color: #a2a7a2;
-  top: 101%;
+  margin: auto;
   box-shadow: none;  
 }
 
@@ -36,81 +44,113 @@ body {
 width: 40px;
 height: 3px;
 border: 1px solid;
-border-radius: 25%;
+border-radius: 4px;
 background: rgb(27, 27, 29);
-top: -28px;
-left: 3px;
-box-shadow: none; 
+box-shadow: none;
+margin-left: 16px; 
 }
 
 .topCircleBig{
-position: absolute;
 width: 7px;
 height: 7px;
 border: 1px solid;
 border-radius: 50%;
 background: rgb(27, 27, 29);
-top: -30px;
-left: 99px;
 box-shadow: none; 
 }
 
 .topCircleSmall{
-position: absolute;
 width: 5px;
 height: 5px;
 border: 1px solid;
 border-radius: 50%;
 background: rgb(27, 27, 29);
-top: -40px;
-left: 50%;
 box-shadow: none; 
 }
 
+.helpers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+
 .sideButtonLeftTop{
 position: absolute;
-width: 3px;
+width: 5px;
 height: 20px;
 border: 1px solid;
-border-radius: 25%;
-background: rgb(221, 221, 228);
-top: 10px;
-left: -12px;
+border-radius: 4px;
+background: rgb(161, 161, 163);
+top: 63px;
+left: 0;
+transform: translate(-100%, 0);
 box-shadow: 0 0 5px rgb(27, 27, 29);
+padding: 0;
 }
 
 .sideButtonLeftMiddle{
 position: absolute;
-width: 3px;
+width: 5px;
 height: 40px;
 border: 1px solid;
-border-radius: 25%;
-background: rgb(221, 221, 228);
-top: 55px;
-left: -12px;
+border-radius: 4px;
+background: rgb(161, 161, 163);
+top: 95px;
+left: 0px;
 box-shadow: 0 0 5px rgb(27, 27, 29);
+padding: 0;
+transform: translate(-100%, 0);
 }
 
 .sideButtonLeftBottom{
 position: absolute;
-width: 3px;
+width: 5px;
 height: 40px;
 border: 1px solid;
-border-radius: 25%;
-background: rgb(221, 221, 228);
-top: 110px;
-left: -12px;
+border-radius: 4px;
+background: rgb(161, 161, 163);
+top: 150px;
+left: 0px;
 box-shadow: 0 0 5px rgb(27, 27, 29);
+padding: 0;
+transform: translate(-100%, 0);
 }
 
 .sideButtonRight{
 position: absolute;
-width: 3px;
+width: 5px;
 height: 40px;
 border: 1px solid;
-border-radius: 25%;
-background: rgb(193, 193, 199);
-top: 55px;
-left: 289px;
+border-radius: 4px;
+background: rgb(224, 224, 230);
+top: 95px;
+right: 0;
 box-shadow: none;
+padding: 0;
+transform: translate(100%, 0);
+}
+
+.screenBottom {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.unlockText {
+  color: black;
+  font-size: large;
+  margin-bottom: 5px;
+  position: relative;
+  top: 250px;
+}
+
+.cameraImage {
+  height: 10%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  top: 170px;
+  left: 100%;
 }
