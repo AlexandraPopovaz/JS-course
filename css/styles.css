@@ -1,8 +1,9 @@
 body {
   position: relative;
   background-size: 100% auto;
-  background-image: url("background-image.jpg");
+  background-image: url("background-hw2.jpg");
   background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .phone {
@@ -153,4 +154,31 @@ transform: translate(100%, 0);
   display: flex;
   top: 170px;
   left: 100%;
+}
+
+ @keyframes go-left-right {
+    from {
+      left: 0px;
+    }
+    to {
+      left: calc(100% - 50px);
+    }
+  }
+
+    @-webkit-keyframes go-left-right {
+    from {
+      left: 0px;
+    }
+    to {
+      left: calc(100% - 50px);
+    }
+  }
+
+  .logo {
+  height: 220px;
+  animation: go-left-right 5s infinite alternate;
+  -webkit-animation: go-left-right 3s infinite alternate;
+  position: relative;
+  border: 2px solid green;
+  overflow-x: hidden;
 }
