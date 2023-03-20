@@ -159,26 +159,34 @@ transform: translate(100%, 0);
  @keyframes go-left-right {
     from {
       left: 0px;
+      border: 10px solid orange;
     }
     to {
       left: calc(100% - 50px);
+      border: 10px solid aqua;
     }
   }
 
     @-webkit-keyframes go-left-right {
     from {
       left: 0px;
+      border: 10px solid orange;
     }
     to {
       left: calc(100% - 50px);
+      border: 10px solid aqua;
     }
   }
 
   .logo {
   height: 220px;
   animation: go-left-right 5s infinite alternate;
-  -webkit-animation: go-left-right 3s infinite alternate;
+  -webkit-animation: go-left-right 5s infinite alternate;
   position: relative;
-  border: 2px solid green;
   overflow-x: hidden;
+}
+
+.audio{
+  position: absolute;
+  margin: 0;
 }
