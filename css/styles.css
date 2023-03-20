@@ -180,13 +180,12 @@ transform: translate(100%, 0);
 
   .logo {
   height: 220px;
-  animation: go-left-right 5s infinite alternate;
-  -webkit-animation: go-left-right 5s infinite alternate;
+  animation: go-left-right 3s infinite alternate;
+  -webkit-animation: go-left-right 3s infinite alternate;
   position: relative;
   overflow-x: hidden;
 }
 
 .audio{
-  position: absolute;
-  margin: 0;
+display: none;
 }
