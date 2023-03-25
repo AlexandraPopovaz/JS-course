@@ -310,35 +310,29 @@ height: 1530px;
   width: 100%;
   padding: 3% 0%;
 }
-
 .card1{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
   margin-right: 3%;
 }
-
 .card2{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
   margin-right: 3%;
 }
-
-
 .card3{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
   margin-right: 3%;
 }
-
 .card4{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
 }
-
 .content{
   display: flex;
   flex-direction: column;
@@ -346,28 +340,69 @@ height: 1530px;
   padding: 8% 10%;
   width: 100%;
 }
-
 .header{
   width: 100%;
   font-family: 'Inter';
   margin-bottom: 10px; 
 }
-
 .info{
   width: 100%;
 }
 
 .chart{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px 0px 24px;
-  gap: 32px;
   width: 100%;
-  height: 458px;
   background: #FFFFFF;
   border-radius: 12px;
+  margin-bottom: 5%;
+  flex-direction: column;
 }
+
+.cardHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px #EAECF0 solid;
+}
+
+.axis{
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.y{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 15px;
+}
+
+.firstChartPart{
+  display: flex;
+}
+
+.x{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  padding-left: 5%;
+  margin-top: -10%;
+}
+
+
+
 
 .table{
   display: flex;
