@@ -215,16 +215,17 @@ width: 100%;
 
 @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 480px){ .sideBar { display: none; }}
+and (max-device-width : 620px){ .sideBar { display: none; }}
 
 .body{
   width: 100%;
   padding: 16px;
+  box-sizing: border-box;
 }
 
 /* @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 1580px){ .body { width: calc(100% - 232px); }} */
+and (max-device-width : 620px){ .body { width: calc(100% - 232px); }} */
 
 .topBar{
   box-sizing: border-box;
@@ -306,7 +307,7 @@ and (max-device-width : 1580px){ .body { width: calc(100% - 232px); }} */
 
 @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 1580px){ .banner { flex-direction: column; align-items: center;}}
+and (max-device-width : 620px){ .banner { flex-direction: column; align-items: center;}}
 
 
 .metrics{
@@ -316,29 +317,55 @@ and (max-device-width : 1580px){ .banner { flex-direction: column; align-items: 
   width: 100%;
   padding: 3% 0%;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 620px){ .metrics { flex-direction: column; align-items: center; width: 100%;}}
+
+
 .card1{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
   margin-right: 3%;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 620px){ .card1 { width: 100%; margin-right: 0; margin-bottom: 15px; font-size: 22px;}}
+
 .card2{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
   margin-right: 3%;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 620px){ .card2 { width: 100%; margin-right: 0; margin-bottom: 15px; font-size: 22px;}}
+
 .card3{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
   margin-right: 3%;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 620px){ .card3 { width: 100%; margin-right: 0; margin-bottom: 15px; font-size: 22px;}}
+
 .card4{
   width: calc(100%/4);
   background: #FFFFFF;
   border-radius: 12px;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 620px){ .card4 { width: 100%; margin-right: 0; font-size: 22px;}}
+
 .content{
   display: flex;
   flex-direction: column;
@@ -424,6 +451,9 @@ and (max-device-width : 1580px){ .banner { flex-direction: column; align-items: 
   box-sizing: border-box;
 }
 
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 620px){ .table { min-width: 600px; overflow: visible;}}
 
 table{
   border-collapse: collapse;
@@ -440,7 +470,7 @@ table{
 
 @media only screen
   and (min-device-width : 320px)
-  and (max-device-width : 1580px){ table { overflow: visible;}}
+  and (max-device-width : 620px){ table { min-width: 600px; overflow: visible;}}
 
 td, th{
   padding: 3px;
