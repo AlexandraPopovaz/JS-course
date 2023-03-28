@@ -222,9 +222,9 @@ and (max-device-width : 480px){ .sideBar { display: none; }}
   padding: 16px;
 }
 
-@media only screen
-and (min-device-width : 480px)
-and (max-device-width : 1580px){ .body { width: calc(100% - 232px); }}
+/* @media only screen
+and (min-device-width : 320px)
+and (max-device-width : 1580px){ .body { width: calc(100% - 232px); }} */
 
 .topBar{
   box-sizing: border-box;
@@ -303,6 +303,11 @@ and (max-device-width : 1580px){ .body { width: calc(100% - 232px); }}
   justify-content: space-between;
   display: flex;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 1580px){ .banner { flex-direction: column; align-items: center;}}
+
 
 .metrics{
   display: flex;
@@ -433,11 +438,13 @@ table{
   border: 2px solid white;
 }
 
-
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 1580px){ table { overflow: visible;}}
 
 td, th{
-  padding: 3px; /* Поля вокруг содержимого таблицы */
-  text-align: left; /* Выравнивание по левому краю */
+  padding: 3px;
+  text-align: left;
 }
 
 tr {
