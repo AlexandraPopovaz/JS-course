@@ -206,11 +206,9 @@ const getUniqueValues = (numbers) => {
         if (uniqueArray.indexOf(number) === -1) {
             uniqueArray.push(number);
         }
-        console.log(uniqueArray);
         return uniqueArray;
     }, []);
 };
-getUniqueValues();
 
 /**
  * Exercise 11
@@ -224,7 +222,26 @@ getUniqueValues();
  *
  * Use: switch case or object like a map structure
  */
-const getErrorMessage = (code) => {};
+const getErrorMessage = (code) => {
+    let errorCode = 500;
+    let result = "";
+    switch (errorCode) {
+        case 500:
+        case 402:
+            result = "Server Error";
+            break;
+        case 401:
+            result = "Authorization failed";
+            break;
+        case 403:
+            result = "Access denied";
+            break;
+        case 404:
+            result = "Not found";
+            break;
+    }
+};
+
 /**
  * Exercise 12
  *
@@ -330,7 +347,23 @@ const getCharacterNames = (characters, franchise) => {
  *]
  * => [1,2,3,4]
  */
-const getSmallestRow = (numbers) => {};
+
+let arr = [
+    [10, 1, 300, 4],
+    [20, 2, 300, 400],
+    [30, 3, 300, 4],
+    [40, 4, 300, 4],
+];
+
+const getSmallestRow = (numbers) => {
+    let arrResult = [];
+    arr.forEach((el) => {
+        let getMinEl = Math.min(...el);
+        arrResult.push(getMinEl);
+    });
+    return arrResult;
+};
+
 /**
  * Exercise 17
  *
@@ -343,14 +376,39 @@ const getSmallestRow = (numbers) => {};
  *]
  * => [1,2,3,4]
  */
-const getSmallestColumn = (numbers) => {};
+
+let arr17 = [
+    [1, 2, 3, 4],
+    [1, 2, 3, 4],
+    [1, 2, 30, 4],
+    [1, 2, 3, 40],
+];
+
+const getSmallestColumn = (numbers) => {
+    let result = [];
+    arr17.forEach((el) => {
+        const newArr = el.sort();
+        result.push(newArr[0]);
+    });
+    return result;
+};
+
 /**
  * Exercise 18
  *
  * Write a function that returns the 2 biggest value of an array
  * [4,3,2,1] => [4,3]
  */
-const get2BiggestValues = (numbers) => {};
+
+let arr18 = [4, 3, 2, 1];
+
+const get2BiggestValues = (numbers) => {
+    let newArr = [];
+    result = arr18.sort();
+    newArr.push(result[result.length - 1], result[result.length - 2]);
+    return newArr;
+};
+
 /**
  * Exercise 19
  *
@@ -359,7 +417,13 @@ const get2BiggestValues = (numbers) => {};
  *
  * 'Return the number (count) of vowels in the given string.' => 15
  */
-const getNumberOfVowels = (string) => {};
+
+let str = "Return the number (count) of vowels in the given string";
+const getNumberOfVowels = (string) => {
+    let m = str.match(/[aeiou]/gi);
+    return m === null ? 0 : m.length;
+};
+
 /**
  * Exercise 20
  *
