@@ -23,13 +23,16 @@
  * Write a function that returns odd array values.
  * [1,2,3,4] => [1,3]
  */
+let arr1 = [1, 2, 3, 4];
 const getOddValues = (numbers) => {
-    let arr = [1, 2, 3, 4];
-    for (let i = 0; i < arr.length; i++) {
+    let result = [];
+    for (let i = 0; i < arr1.length; i++) {
         if (i % 2 === 0) {
-            continue;
+            //continue;
+            result.push(arr1[i]);
         }
     }
+    return result;
 };
 
 /**
@@ -38,14 +41,15 @@ const getOddValues = (numbers) => {
  * Write a function that returns the smallest value of an array
  * [4,2,10,27] => 2
  */
+let arr2 = [4, 2, 10, 27];
 const getSmallestValue = (numbers) => {
-    let arr = [4, 2, 10, 27];
     let result = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[0] > arr[i]) {
-            result = arr[i];
+    for (let i = 0; i < arr2.length; i++) {
+        if (arr2[0] > arr2[i]) {
+            result = arr2[i];
         }
     }
+    return result;
 };
 
 /**
@@ -54,14 +58,15 @@ const getSmallestValue = (numbers) => {
  * Write a function that returns the biggest value of an array
  * [5,22,9,43] => 43
  */
+let arr3 = [5, 22, 9, 43];
 const getBiggestValue = (numbers) => {
-    let arr = [5, 22, 9, 43];
     let result = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[0] < arr[i]) {
-            result = arr[i];
+    for (let i = 0; i < arr3.length; i++) {
+        if (arr3[0] < arr3[i]) {
+            result = arr3[i];
         }
     }
+    return result;
 };
 
 /**
@@ -81,9 +86,9 @@ const getBiggestValue = (numbers) => {
  *
  * Use: filter
  */
+let arr4 = ["I am a short string", "I seem to be short too", "And I am a long string"];
 const getShorterStrings = (strings, characters = 20) => {
-    let arr = ["I am a short string", "I seem to be short too", "And I am a long string"];
-    const result = arr.filter((string) => string.length < 20);
+    const result = arr4.filter((string) => string.length < 20);
     return result;
 };
 
@@ -104,16 +109,16 @@ const getShorterStrings = (strings, characters = 20) => {
  *
  * Use: map
  */
+let arr5 = [
+    { name: "shark", likes: "ocean" },
+    { name: "turtle", likes: "pond" },
+    { name: "otter", likes: "fish biscuits" },
+];
 const getComputedStrings = (fish) => {
-    let arr = [
-        { name: "shark", likes: "ocean" },
-        { name: "turtle", likes: "pond" },
-        { name: "otter", likes: "fish biscuits" },
-    ];
-
-    const result = arr.map((el) => {
+    const result = arr5.map((el) => {
         return `${el.name} likes ${el.likes}`;
     });
+    return result;
 };
 
 /**
@@ -126,9 +131,9 @@ const getComputedStrings = (fish) => {
  *
  * We use: ...
  */
+let obj1 = { name: "Alice" };
+let obj2 = { age: 11 };
 const mergeObjects = (objects) => {
-    let obj1 = { name: "Alice" };
-    let obj2 = { age: 11 };
     const result = { ...obj1, ...obj2 };
     return result;
 };
@@ -141,9 +146,9 @@ const mergeObjects = (objects) => {
  *
  * Use: operator ... and Math.min
  */
+let arr7 = [5, 200, -5, 41];
 const getSmallestValue2 = (numbers) => {
-    let arr = [5, 200, -5, 41];
-    let result = Math.min(...arr);
+    let result = Math.min(...arr7);
     return result;
 };
 
@@ -155,10 +160,10 @@ const getSmallestValue2 = (numbers) => {
  *
  * Use: reduce
  */
+let arr8 = [77, 2, 30, 51];
 const getOddValues2 = (numbers) => {
-    let arr = [77, 2, 30, 51];
     let reducer = (a, b) => (b % 2 === 0 ? a : a.concat(b));
-    let result = arr.reduce(reducer, []);
+    let result = arr8.reduce(reducer, []);
     return result;
 };
 
@@ -179,16 +184,15 @@ const getOddValues2 = (numbers) => {
  *
  * Use: reduce
  */
+let arr9 = [
+    { price: 10, count: 2 },
+    { price: 100, count: 1 },
+    { price: 2, count: 5 },
+    { price: 15, count: 6 },
+];
 const calculateTotal = (products) => {
-    let arr = [
-        { price: 10, count: 2 },
-        { price: 100, count: 1 },
-        { price: 2, count: 5 },
-        { price: 15, count: 6 },
-    ];
-
     let reducer = (a, b) => ({ price: a.price + b.price });
-    let result = arr.reduce(reducer, { price: 0 });
+    let result = arr9.reduce(reducer, { price: 0 });
     return result;
 };
 
@@ -200,9 +204,9 @@ const calculateTotal = (products) => {
  *
  * Use: reduce and indexOf
  */
+let arr10 = [1, 1, 2, 3, 4, 4];
 const getUniqueValues = (numbers) => {
-    let arr = [1, 1, 2, 3, 4, 4];
-    return arr.reduce((uniqueArray, number) => {
+    return arr10.reduce((uniqueArray, number) => {
         if (uniqueArray.indexOf(number) === -1) {
             uniqueArray.push(number);
         }
@@ -222,8 +226,8 @@ const getUniqueValues = (numbers) => {
  *
  * Use: switch case or object like a map structure
  */
+let errorCode = 500;
 const getErrorMessage = (code) => {
-    let errorCode = 500;
     let result = "";
     switch (errorCode) {
         case 500:
@@ -240,6 +244,7 @@ const getErrorMessage = (code) => {
             result = "Not found";
             break;
     }
+    return result;
 };
 
 /**
@@ -250,11 +255,12 @@ const getErrorMessage = (code) => {
  *
  * Use: .sort()
  */
+let arr12 = [4, 3, 2, 1];
 const get2SmallestValues = (numbers) => {
-    let arr = [4, 3, 2, 1];
-    let arrAfterSort = arr.sort();
+    let arrAfterSort = arr12.sort();
     let resultArr = [];
     resultArr.push(arrAfterSort[0], arrAfterSort[1]);
+    return resultArr;
 };
 
 /**
@@ -272,12 +278,12 @@ const get2SmallestValues = (numbers) => {
 
 //it seems like a typo and here it should be "Peter" instead of "Petr"
 
+let obj = {
+    firstName: "Peter",
+    secondName: "Vasiliev",
+    patronymic: "Ivanovich",
+};
 const getFullName = (user) => {
-    let obj = {
-        firstName: "Peter",
-        secondName: "Vasiliev",
-        patronymic: "Ivanovich",
-    };
     let arr = Object.values(obj);
     let arrNewOrder = [];
     arrNewOrder.push(arr[0], arr[2], arr[1]);
@@ -295,9 +301,9 @@ const getFullName = (user) => {
  *
  * Use: map
  */
+const arr14 = [1, 2, 3, 4];
 const multiplyTo = (numbers, multiplier) => {
-    const arr = [1, 2, 3, 4];
-    const result = arr.map((number) => number * 5);
+    const result = arr14.map((number) => number * 5);
     return result;
 };
 
@@ -318,15 +324,14 @@ const multiplyTo = (numbers, multiplier) => {
  *
  * Use: filter, map, join
  */
+let arr15 = [
+    { name: "Batman", franchise: "DC" },
+    { name: "Ironman", franchise: "Marvel" },
+    { name: "Thor", franchise: "Marvel" },
+    { name: "Superman", franchise: "DC" },
+];
 const getCharacterNames = (characters, franchise) => {
-    let arr = [
-        { name: "Batman", franchise: "DC" },
-        { name: "Ironman", franchise: "Marvel" },
-        { name: "Thor", franchise: "Marvel" },
-        { name: "Superman", franchise: "DC" },
-    ];
-
-    let arrAfterFilter = arr.filter((el) => el.franchise === "Marvel");
+    let arrAfterFilter = arr15.filter((el) => el.franchise === "Marvel");
     let arrAfterMap = arrAfterFilter.map((el) => {
         return `${el.name}`;
     });
@@ -348,7 +353,7 @@ const getCharacterNames = (characters, franchise) => {
  * => [1,2,3,4]
  */
 
-let arr = [
+let arr16 = [
     [10, 1, 300, 4],
     [20, 2, 300, 400],
     [30, 3, 300, 4],
@@ -357,7 +362,7 @@ let arr = [
 
 const getSmallestRow = (numbers) => {
     let arrResult = [];
-    arr.forEach((el) => {
+    arr16.forEach((el) => {
         let getMinEl = Math.min(...el);
         arrResult.push(getMinEl);
     });
