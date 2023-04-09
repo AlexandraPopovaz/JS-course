@@ -28,6 +28,41 @@
         const ul = document.createElement("ul");
         ul.innerHTML = listItems;
         return ul;
+
+        // const listItems = items.map((item) => `<li>${item}</li>`).join("");
+        // const ul = document.createElement("ul");
+        // li.appendChild(document.createElement("input").attributes({ type: "checkbox" }));
+        // ul.appendChild(li);
+        // ul.innerHTML = listItems;
+        // return ul;
+
+        // const listItems = items.map((item) => `<li>${item}</li>`).join("");
+        // const ul = document.createElement("ul");
+        // ul.innerHTML = listItems;
+        // li.appendChild(
+        //     document.createElement("input").attr({
+        //         id: "myCheckbox",
+        //         name: "myCheckbox",
+        //         value: "myValue",
+        //         type: "checkbox",
+        //     })
+        // );
+        // ul.appendChild(li);
+        // return ul;
+
+        // var ul = document.getElementById("ul"); //ul
+        // var li = document.createElement("li"); //li
+        // var text = document.getElementById("texto");
+
+        // var checkbox = document.createElement("input");
+        // checkbox.type = "checkbox";
+        // checkbox.name = "name";
+        // checkbox.value = "value";
+        // checkbox.id = "id";
+
+        // li.appendChild(checkbox);
+        // li.appendChild(document.createTextNode(text));
+        // ul.appendChild(li);
     }
 
     /**
@@ -48,7 +83,7 @@
      * @returns {HTMLDivElement} - The app container
      */
     function App() {
-        const [items, setItems] = useState(["Item 1", "Item 2", "Item 3"]);
+        const [items, setItems] = useState(["Text 1", "Text 2", "Text 3"]);
 
         function addItem() {
             setItems([...items, `Item ${items.length + 1}`]);
@@ -60,6 +95,7 @@
 
         function openModal() {
             modal.classList.remove("hidden");
+            modalBackground.classList.remove("hidden");
         }
 
         function closeModal() {
@@ -71,6 +107,8 @@
         const titleRoot = document.createElement("text");
         titleRoot.textContent = "To Do List";
         titleRoot.classList.add("titleRoot");
+
+        const list = List({ items });
 
         const wrapperInputButton = document.createElement("div");
         wrapperInputButton.classList.add("wrapper");
@@ -122,20 +160,24 @@
         const modal = document.createElement("div");
         modal.classList.add("modal", "hidden");
 
-        const inputModal = document.createElement("input");
-        const titleModal = "Add New Task";
-        inputModal.placeholder = "Task Title";
+        // const modalBackground = document.createElement("div");
+        // modalBackground.classList.add("modalBackground", "hidden");
 
-        const list = List({ items });
+        const inputModal = document.createElement("input");
+        inputModal.classList.add("inputModal");
+        const titleModal = document.createElement("text");
+        titleModal.textContent = "Add New Task";
+        inputModal.placeholder = "Task Title";
+        titleModal.classList.add("titleModal");
+
+        const buttonsWrapper = document.createElement("div");
+        buttonsWrapper.classList.add("buttonsWrapper");
 
         const buttonAdd = Button({ text: "Add Task", onClick: addItem });
-        buttonAdd.style.width = "100px";
-        buttonAdd.style.height = "30px";
-        buttonAdd.style.borderRadius = "4%";
+        buttonAdd.classList.add("buttonAdd");
 
         const buttonCancel = Button({ text: "Cancel", onClick: closeModal });
-        buttonCancel.style.width = "100px";
-        buttonCancel.style.height = "30px";
+        buttonCancel.classList.add("buttonCancel");
 
         // const buttonCancel = Button({ text: "Cancel", onClick: deleteItem });
         // buttonCancel.style.width = "100px";
@@ -143,13 +185,20 @@
 
         completedTasksSection.append(titlecompletedTasksSection, checkbox5, checkbox6);
 
-        allTasksSection.append(titleAllTasksSection, checkbox1, checkbox2, checkbox3, checkbox4);
+        allTasksSection.append(
+            titleAllTasksSection,
+            list,
+            checkbox1,
+            checkbox2,
+            checkbox3,
+            checkbox4
+        );
 
         wrapperInputButton.append(inputRoot, buttonNewTask);
 
-        modal.append(titleModal, inputModal, buttonCancel, buttonAdd);
-        //modal.append(buttonsWrapper);
-        //mainWindow.append(modal);
+        modal.append(titleModal, inputModal, buttonsWrapper);
+
+        buttonsWrapper.append(buttonCancel, buttonAdd);
 
         root.append(titleRoot, modal, wrapperInputButton, allTasksSection, completedTasksSection);
 
