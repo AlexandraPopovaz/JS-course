@@ -26,13 +26,13 @@
     function List({ items }) {
         const listItems = items.map((item) => `<li>${item}</li>`).join("");
         const ul = document.createElement("ul");
+        ul.type = "square";
         ul.innerHTML = listItems;
         return ul;
 
         // const listItems = items.map((item) => `<li>${item}</li>`).join("");
+        // li.appendChild(document.createElement("input").attr({ type: "checkbox" }));
         // const ul = document.createElement("ul");
-        // li.appendChild(document.createElement("input").attributes({ type: "checkbox" }));
-        // ul.appendChild(li);
         // ul.innerHTML = listItems;
         // return ul;
 
@@ -50,11 +50,11 @@
         // ul.appendChild(li);
         // return ul;
 
-        // var ul = document.getElementById("ul"); //ul
-        // var li = document.createElement("li"); //li
-        // var text = document.getElementById("texto");
+        // let ul = document.getElementById("ul"); //ul
+        // let li = document.createElement("li"); //li
+        // let text = document.getElementById("texto");
 
-        // var checkbox = document.createElement("input");
+        // let checkbox = document.createElement("input");
         // checkbox.type = "checkbox";
         // checkbox.name = "name";
         // checkbox.value = "value";
@@ -86,7 +86,7 @@
         const [items, setItems] = useState(["Text 1", "Text 2", "Text 3"]);
 
         function addItem() {
-            setItems([...items, `Item ${items.length + 1}`]);
+            setItems([...items, `${inputModal.value}`]);
         }
 
         // function deleteItem() {
@@ -164,6 +164,7 @@
         // modalBackground.classList.add("modalBackground", "hidden");
 
         const inputModal = document.createElement("input");
+        //inputModal.value = `${text}`;
         inputModal.classList.add("inputModal");
         const titleModal = document.createElement("text");
         titleModal.textContent = "Add New Task";
