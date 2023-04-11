@@ -27,6 +27,10 @@
         const listItems = items.map((item) => `<li><input type="checkbox">${item}</li>`).join("");
         const ul = document.createElement("ul");
         ul.innerHTML = listItems;
+
+        const removeIcon = document.createElement("img");
+        removeIcon.classList.add("removeIcon");
+
         return ul;
     }
 

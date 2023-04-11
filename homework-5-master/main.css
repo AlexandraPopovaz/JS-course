@@ -145,3 +145,28 @@ html {
     display: flex;
     width: 22%;
 }
+
+ul {
+    padding-left: 45%;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.checkbox:not(:disabled):not(:checked) + label:hover::before {
+    border-color: rgba(0, 0, 255, 0.33);
+}
+.checkbox:not(:disabled):active + label::before {
+    background-color: rgba(0, 0, 255, 0.66);
+}
+.checkbox:focus + label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 255, 0.125);
+}
+.checkbox:focus:not(:checked) + label::before {
+    border-color: #c3c3c3;
+}
+.checkbox:disabled + label::before {
+    background-color: black;
+}
