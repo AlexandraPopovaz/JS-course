@@ -24,45 +24,10 @@
      * @returns {HTMLElement} - List element
      */
     function List({ items }) {
-        const listItems = items.map((item) => `<li>${item}</li>`).join("");
+        const listItems = items.map((item) => `<li><input type="checkbox">${item}</li>`).join("");
         const ul = document.createElement("ul");
-        ul.type = "square";
         ul.innerHTML = listItems;
         return ul;
-
-        // const listItems = items.map((item) => `<li>${item}</li>`).join("");
-        // li.appendChild(document.createElement("input").attr({ type: "checkbox" }));
-        // const ul = document.createElement("ul");
-        // ul.innerHTML = listItems;
-        // return ul;
-
-        // const listItems = items.map((item) => `<li>${item}</li>`).join("");
-        // const ul = document.createElement("ul");
-        // ul.innerHTML = listItems;
-        // li.appendChild(
-        //     document.createElement("input").attr({
-        //         id: "myCheckbox",
-        //         name: "myCheckbox",
-        //         value: "myValue",
-        //         type: "checkbox",
-        //     })
-        // );
-        // ul.appendChild(li);
-        // return ul;
-
-        // let ul = document.getElementById("ul"); //ul
-        // let li = document.createElement("li"); //li
-        // let text = document.getElementById("texto");
-
-        // let checkbox = document.createElement("input");
-        // checkbox.type = "checkbox";
-        // checkbox.name = "name";
-        // checkbox.value = "value";
-        // checkbox.id = "id";
-
-        // li.appendChild(checkbox);
-        // li.appendChild(document.createTextNode(text));
-        // ul.appendChild(li);
     }
 
     /**
@@ -83,7 +48,7 @@
      * @returns {HTMLDivElement} - The app container
      */
     function App() {
-        const [items, setItems] = useState(["Text 1", "Text 2", "Text 3"]);
+        const [items, setItems] = useState(["Task 1: complete HW5"]);
 
         function addItem() {
             setItems([...items, `${inputModal.value}`]);
@@ -126,22 +91,6 @@
         const titleAllTasksSection = document.createElement("text");
         titleAllTasksSection.textContent = "All Tasks";
         titleAllTasksSection.classList.add("titleAllTasksSection");
-
-        const checkbox1 = document.createElement("input");
-        checkbox1.type = "checkbox";
-        checkbox1.name = "The very first task";
-
-        const checkbox2 = document.createElement("input");
-        checkbox2.type = "checkbox";
-        checkbox2.name = "The second task";
-
-        const checkbox3 = document.createElement("input");
-        checkbox3.type = "checkbox";
-        checkbox3.name = "3 task";
-
-        const checkbox4 = document.createElement("input");
-        checkbox4.type = "checkbox";
-        checkbox4.name = "4 task";
 
         const completedTasksSection = document.createElement("div");
         completedTasksSection.classList.add("completedTasksSection");
@@ -186,14 +135,7 @@
 
         completedTasksSection.append(titlecompletedTasksSection, checkbox5, checkbox6);
 
-        allTasksSection.append(
-            titleAllTasksSection,
-            list,
-            checkbox1,
-            checkbox2,
-            checkbox3,
-            checkbox4
-        );
+        allTasksSection.append(titleAllTasksSection, list);
 
         wrapperInputButton.append(inputRoot, buttonNewTask);
 
