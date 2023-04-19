@@ -24,12 +24,14 @@
      * @returns {HTMLElement} - List element
      */
     function List({ items }) {
-        const listItems = items.map((item) => `<li><input type="checkbox">${item}</li>`).join("");
+        const listItems = items
+            .map((item) => `<li><input type="checkbox">${item.title}</li>`)
+            .join("");
         const ul = document.createElement("ul");
         ul.innerHTML = listItems;
 
-        const removeIcon = document.createElement("img");
-        removeIcon.classList.add("removeIcon");
+        // const removeIcon = document.createElement("img");
+        // removeIcon.classList.add("removeIcon");
 
         return ul;
     }
@@ -47,15 +49,63 @@
         return button;
     }
 
+    const SERVER_URL = "http://localhost:3004/tasks";
+
+    async function getTodos(query, endpoint = SERVER_URL) {
+        try {
+            query ? (query = `?${query}`) : (query = "");
+
+            const response = await fetch(`${endpoint}${query}`);
+
+            if (!response.ok) throw new Error(response.statusText);
+
+            const data = await response.json();
+            console.log(data);
+            return data;
+        } catch (err) {
+            console.error(err.message || err);
+        }
+    }
+
+    // async function postTodo(url = "http://localhost:3004/tasks", data = {}) {
+    //     fetch(url, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(data),
+    //     }).then((res) => res.json());
+    //     return response.json();
+    //     //.then((json) => consol.log(json));
+    // }
+
+    async function postTodo(data = {}) {
+        await fetch("http://localhost:3004/tasks", { method: "POST", body: JSON.stringify(data) });
+        return data;
+    }
+
     /**
      * App container
      * @returns {HTMLDivElement} - The app container
      */
+
     function App() {
-        const [items, setItems] = useState(["Task 1: complete HW5"]);
+        //const [items, setItems] = useState(["Task 1: complete HW5"]);
+        let items = [];
+        const allTasksSection = document.createElement("div");
+
+        function setItems(newItems) {
+            items = newItems;
+        }
 
         function addItem() {
-            setItems([...items, `${inputModal.value}`]);
+            const newItem = { id: 1, title: `${inputModal.value}`, isCompleted: true };
+            //postTodo(newItem);
+            setItems([...items, newItem]);
+
+            const listNew = List({ items });
+            allTasksSection.replaceChild(listNew, allTasksSection.childNodes[1]);
+            closeModal();
         }
 
         // function deleteItem() {
@@ -89,7 +139,6 @@
         const buttonNewTask = Button({ text: "+ New Task", onClick: openModal });
         buttonNewTask.classList.add("buttonNewTask");
 
-        const allTasksSection = document.createElement("div");
         allTasksSection.classList.add("allTasksSection");
 
         const titleAllTasksSection = document.createElement("text");
@@ -148,6 +197,12 @@
         buttonsWrapper.append(buttonCancel, buttonAdd);
 
         root.append(titleRoot, modal, wrapperInputButton, allTasksSection, completedTasksSection);
+
+        getTodos().then((data) => {
+            setItems(data);
+            const listNew = List({ items });
+            allTasksSection.replaceChild(listNew, allTasksSection.childNodes[1]);
+        });
 
         return root;
     }
