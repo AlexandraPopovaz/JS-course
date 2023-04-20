@@ -67,20 +67,13 @@
         }
     }
 
-    // async function postTodo(url = "http://localhost:3004/tasks", data = {}) {
-    //     fetch(url, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(data),
-    //     }).then((res) => res.json());
-    //     return response.json();
-    //     //.then((json) => consol.log(json));
-    // }
-
     async function postTodo(data = {}) {
-        await fetch("http://localhost:3004/tasks", { method: "POST", body: JSON.stringify(data) });
+        await fetch("http://localhost:3004/tasks", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" },
+        });
+
         return data;
     }
 
@@ -99,8 +92,8 @@
         }
 
         function addItem() {
-            const newItem = { id: 1, title: `${inputModal.value}`, isCompleted: true };
-            //postTodo(newItem);
+            const newItem = { id: Math.random(), title: `${inputModal.value}`, isCompleted: true };
+            postTodo(newItem);
             setItems([...items, newItem]);
 
             const listNew = List({ items });
